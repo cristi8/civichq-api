@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `civichq`.`Apps` (
   `Tags` VARCHAR(150) NULL DEFAULT NULL,
   `Technologies` VARCHAR(150) NULL DEFAULT NULL,
   `IsMaster` TINYINT(1) NULL DEFAULT NULL,
-  `IsActive` TINYINT(1) NULL DEFAULT NULL
+  `IsActive` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE INDEX `Id` (`Id` ASC))
 ENGINE = InnoDB
@@ -213,7 +213,7 @@ IN ngolinkedin varchar(1000),
 IN ngotwitter varchar(1000),
 IN ngoinstagram varchar(1000),
 IN ngodescription varchar(500)  CHARSET utf8 ,
-IN ngologo varchar(150)),
+IN ngologo varchar(150),
 IN appisactive tinyint(1))
 BEGIN
 DECLARE ngoId INT DEFAULT 0;
@@ -430,7 +430,7 @@ SELECT message as 'result';
 COMMIT;
 
 END; //
-
+DELIMITER ;
 -- -----------------------------------------------------
 -- procedure InsertTags
 -- -----------------------------------------------------
@@ -498,8 +498,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Initial Users --
 INSERT INTO `Users` VALUES ('3', 'code4', 'aa708ef36100823453c7d7d09f915e21281f7fe3af342d322874afd82b766a97d5dc671cbcc7368f22a21f3982f94251fc74eee92ded07a359ebe8b079448f6c', b'1', b'1'), ('4', 'sentinel', '546a7f97b8a81a1fcee3e47700393bc3972d1ef44bb8cfad9a9b18a880bbf3969327a410de2000aa92ed3a1a81984dfa92150a716f1a5ca3fdb3538da3bb3389', b'1', b'0');
 SET FOREIGN_KEY_CHECKS = 1;
---------------------------
+-- ------------------------
 
 -- Standard Categories --
 INSERT INTO `Categories` VALUES ('1', 'Social', b'1', '10'), ('2', 'Educație', b'1', '20'), ('3', 'Mediu', b'1', '30'), ('4', 'Transparență', b'1', '40'), ('5', 'Politic', b'1', '50'), ('6', 'Servicii', b'1', '60');
---------------------------
+-- ------------------------
